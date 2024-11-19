@@ -6,10 +6,11 @@ ol.upper-alpha {
     list-style-type: upper-alpha; 
 }
 
-/* for testing the ol elements are in the HTML */
+/* for testing the ol elements are in the HTML 
 ol {
     border: solid green 3px;
 }
+    */
 
 .upper-alpha ol {
   list-style-type: upper-alpha;
