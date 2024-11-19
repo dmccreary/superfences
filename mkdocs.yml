@@ -1,6 +1,7 @@
 site_name: Test Superfences
 nav:
   - Home: index.md
+  - Superfences Tutorial: fences-tutorial.md
   - ChatGPT: chatgpt-suggestions.md
 
 theme:
