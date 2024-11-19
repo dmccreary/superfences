@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#using-the-md-in-html-markdown-extension" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -214,6 +219,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    MD in HTML
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -224,6 +242,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-modify-your-mkdocsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Modify your mkdocs.yml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-add-a-css-rule-to-extracss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Add A CSS Rule to extra.css
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-add-div-to-the-question-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Add Div to the Question Responses
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -306,6 +370,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-modify-your-mkdocsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Modify your mkdocs.yml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-add-a-css-rule-to-extracss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Add A CSS Rule to extra.css
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-add-div-to-the-question-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Add Div to the Question Responses
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -320,8 +421,45 @@
                   
 
 
-  <h1>MD in HTML</h1>
-
+<h1 id="using-the-md-in-html-markdown-extension">Using the MD-in-HTML Markdown Extension</h1>
+<p>Here is an elegent problem to the numbering problem.</p>
+<p>There is a markdown extension called <code>md_in_html</code>.
+When you turn on this extension, you can add
+Markdown text inside an HTML element like <code>`div</code>.
+You can then add a class to that div and modify
+the CSS to change the formatting just within that
+block of Markup.  This is exactly what we want
+for numbering our question responses with uppercase letters.</p>
+<p>Here are the three simple steps:</p>
+<h2 id="step-1-modify-your-mkdocsyml">Step 1: Modify your mkdocs.yml</h2>
+<p>You need to add the <code>md_in_html</code> markup extension and
+also make sure you add an <code>extra.css</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">md_in_html</span>
+<span class="nt">extra_css</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">css/extra.css</span>
+</code></pre></div>
+<h2 id="step-2-add-a-css-rule-to-extracss">Step 2: Add A CSS Rule to extra.css</h2>
+<p>Now go create or edit the <code>docs/css/extra.css</code> file
+and add the following rule:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">upper-alpha</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">list-style-type</span><span class="p">:</span><span class="w"> </span><span class="kc">upper-alpha</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This rule says "If you have a ordered list within
+any element that is in the class <code>upper-alpha</code>
+the apply the rule <code>list-style-type: upper-alpha</code>.</p>
+<p>This will change the lits items to use A. B. C. D. etc. instead
+of 1. 2. 3. 4.</p>
+<h2 id="step-3-add-div-to-the-question-responses">Step 3: Add Div to the Question Responses</h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;upper-alpha&quot;</span> <span class="na">markdown</span><span class="p">&gt;</span>
+1. First item
+2. Second item
+3. Third item
+4. Fourth item
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>The result is perfect!</p>
 <div class="upper-alpha">
 <ol>
 <li>First item</li>
