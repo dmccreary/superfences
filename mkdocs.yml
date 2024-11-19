@@ -4,12 +4,17 @@ nav:
 
 theme:
   name: material
-  markdown_extensions:
+
+markdown_extensions:
   - attr_list
+  # - markdown.extensions.extra
   - pymdownx.superfences:
       custom_fences:
         - name: div
           class: ''
-          format: pymdownx.superfences.fence_div_format
+          format: !!python/name:pymdownx.superfences.fence_div_format
 extra_css:
   - css/extra.css
+
+#          format: !!python/name:pymdownx.superfences.fence_div_format
+#          format: pymdownx.superfences.fence_div_format
