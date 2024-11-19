@@ -10,6 +10,8 @@
       
       
       
+        <link rel="next" href="chatgpt-suggestions/">
+      
       
       <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
@@ -235,27 +237,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#test-numeric-ordered-list" class="md-nav__link">
+  <a href="#test-1-default-numeric-ordered-list" class="md-nav__link">
     <span class="md-ellipsis">
-      Test Numeric Ordered List
+      Test #1: Default Numeric Ordered List
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#test-for-upper-alpha-order" class="md-nav__link">
+  <a href="#test-2-using-superfences-for-upper-alpha-order" class="md-nav__link">
     <span class="md-ellipsis">
-      Test for Upper Alpha Order
+      Test #2 Using Superfences for Upper Alpha Order
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#lists-within-divs-fail" class="md-nav__link">
+  <a href="#markdown-lists-within-divs-also-fail" class="md-nav__link">
     <span class="md-ellipsis">
-      Lists Within Divs Fail
+      Markdown Lists Within Divs Also Fail
     </span>
   </a>
   
@@ -279,10 +281,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#attr_list-vs-markdownextensionsextra" class="md-nav__link">
+    <span class="md-ellipsis">
+      attr_list vs. markdown.extensions.extra
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Tests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chatgpt-suggestions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ChatGPT
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -314,27 +372,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#test-numeric-ordered-list" class="md-nav__link">
+  <a href="#test-1-default-numeric-ordered-list" class="md-nav__link">
     <span class="md-ellipsis">
-      Test Numeric Ordered List
+      Test #1: Default Numeric Ordered List
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#test-for-upper-alpha-order" class="md-nav__link">
+  <a href="#test-2-using-superfences-for-upper-alpha-order" class="md-nav__link">
     <span class="md-ellipsis">
-      Test for Upper Alpha Order
+      Test #2 Using Superfences for Upper Alpha Order
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#lists-within-divs-fail" class="md-nav__link">
+  <a href="#markdown-lists-within-divs-also-fail" class="md-nav__link">
     <span class="md-ellipsis">
-      Lists Within Divs Fail
+      Markdown Lists Within Divs Also Fail
     </span>
   </a>
   
@@ -358,6 +416,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#attr_list-vs-markdownextensionsextra" class="md-nav__link">
+    <span class="md-ellipsis">
+      attr_list vs. markdown.extensions.extra
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Tests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -374,33 +468,183 @@
 
 
 <h1 id="test-of-superfences-custom">Test of Superfences Custom</h1>
-<p>This test should use uppercase
-letters to renumber a list.</p>
-<h2 id="test-numeric-ordered-list">Test Numeric Ordered List</h2>
+<p>Our goal it to use uppercase
+letters to style the ordered list like this.</p>
+<p><img alt="" src="img/ordered-list-upper-alpha.png" />{width="100px"}</p>
+<p>Our final result is to a superfence that adds
+a &lt;div&gt; with a class in markdown.</p>
+<div class="highlight"><pre><span></span><code>```markdown {.upper-alpha}
+1. Response 1
+2. Response 2
+3. Response 3
+4. Response 4
+```
+</code></pre></div>
+<p>Which renders this:</p>
+<div class="upper-alpha highlight"><pre><span></span><code><span class="k">1.</span> Response 1
+<span class="k">2.</span> Response 2
+<span class="k">3.</span> Response 3
+<span class="k">4.</span> Response 4
+</code></pre></div>
+<p>The trick is to not force the order list, but to just
+add a lot of CSS to make the pre/code blocks look like lists.</p>
+<p>From this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;upper-alpha highlight&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;k&quot;</span><span class="p">&gt;</span>1.<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> Response 1
+      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;k&quot;</span><span class="p">&gt;</span>2.<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> Response 2
+      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;k&quot;</span><span class="p">&gt;</span>3.<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> Response 3
+      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;k&quot;</span><span class="p">&gt;</span>4.<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> Response 4
+    <span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Using the following CSS:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">upper-alpha</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">counter-reset</span><span class="p">:</span><span class="w"> </span><span class="n">list-counter</span><span class="p">;</span><span class="w"> </span><span class="c">/* Initialize the counter */</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w"> </span><span class="c">/* Optional: Set a preferred font */</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span><span class="w">               </span><span class="c">/* Optional: Set font size */</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w">                   </span><span class="c">/* Optional: Set text color */</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="p">.</span><span class="nc">upper-alpha</span><span class="w"> </span><span class="nt">pre</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c">/* Remove default margin */</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="p">.</span><span class="nc">upper-alpha</span><span class="w"> </span><span class="nt">code</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span><span class="w">               </span><span class="c">/* Ensure code block occupies full width */</span>
+<span class="w">    </span><span class="k">white-space</span><span class="p">:</span><span class="w"> </span><span class="kc">pre-wrap</span><span class="p">;</span><span class="w">        </span><span class="c">/* Allow line wrapping */</span>
+<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span><span class="w">           </span><span class="c">/* Establish a positioning context for absolute elements */</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="p">.</span><span class="nc">upper-alpha</span><span class="w"> </span><span class="p">.</span><span class="nc">k</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-block</span><span class="p">;</span><span class="w">        </span><span class="c">/* Allow setting width and positioning */</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span><span class="w">                  </span><span class="c">/* Space for the counter */</span>
+<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span><span class="w">           </span><span class="c">/* Positioning context for ::before */</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">transparent</span><span class="p">;</span><span class="w">           </span><span class="c">/* Hide existing numbers */</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="p">.</span><span class="nc">upper-alpha</span><span class="w"> </span><span class="p">.</span><span class="nc">k</span><span class="p">::</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">counter-increment</span><span class="p">:</span><span class="w"> </span><span class="n">list-counter</span><span class="p">;</span><span class="w"> </span><span class="c">/* Increment the counter */</span>
+<span class="w">    </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="nb">counter</span><span class="p">(</span><span class="n">list</span><span class="nv">-counter</span><span class="p">,</span><span class="w"> </span><span class="kc">upper-alpha</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;. &quot;</span><span class="p">;</span><span class="w"> </span><span class="c">/* Display A., B., etc. */</span>
+<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">    </span><span class="k">left</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c">/* Align to the left of the .k span */</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w"> </span><span class="c">/* Color of the new markers */</span>
+<span class="w">    </span><span class="c">/* Adjust vertical alignment if necessary */</span>
+<span class="w">    </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+<p>The mkdocs.yml is simple</p>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test Superfences</span>
+
+<span class="nt">nav</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+
+<span class="nt">theme</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+
+<span class="nt">markdown_extensions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.superfences</span><span class="p">:</span>
+
+<span class="nt">extra_css</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">css/extra.css</span>
+</code></pre></div>
+<p>This allows us to wrap the ordered list in a div that
+has a class specified in the markdown. </p>
+<h2 id="test-1-default-numeric-ordered-list">Test #1: Default Numeric Ordered List</h2>
 <ol>
 <li>Response 1</li>
 <li>Response 2</li>
 <li>Response 3</li>
 <li>Response 4</li>
 </ol>
-<p>This works fine and has a green boarder showing the \&lt;ol&gt; is there.</p>
-<h2 id="test-for-upper-alpha-order">Test for Upper Alpha Order</h2>
+<p>This is the default for mkdocs material markdown. 
+It has a green boarder showing the &lt;ol&gt; element
+is present in the HTML per this CSS rule:</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* for showing that the ol elements are in the HTML */</span>
+<span class="nt">ol</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">green</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="test-2-using-superfences-for-upper-alpha-order">Test #2 Using Superfences for Upper Alpha Order</h2>
+<p>This is the format for superfences.  The three colons
+<code>:::</code> that bracket the block must match and must
+not be indented.</p>
+<div class="highlight"><pre><span></span><code>::: {.upper-alpha}
+1. Response 1
+2. Response 2
+3. Response 3
+4. Response 4
+:::
+</code></pre></div>
+<p>Here is how it looks:</p>
 <p>::: {.upper-alpha}
 1. Response 1
 2. Response 2
 3. Response 3
 4. Response 4
 :::</p>
+<p>The mkdocs.yml is the following:</p>
+<div class="highlight"><pre><span></span><code>site_name: Test Superfences
+nav:
+  - Home: index.md
+
+theme:
+  name: material
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: div
+          class: &#39;&#39;
+          format: !!python/name:pymdownx.superfences.fence_div_format
+extra_css:
+  - css/extra.css
+</code></pre></div>
+<p>The superfence should wrap the &lt;ol&gt; in a &lt;div&gt;:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;upper-alpha&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>First item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Second item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Third item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Fourth item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>The CSS for rendering this in upper alpha is the following:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">upper-alpha</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">list-style-type</span><span class="p">:</span><span class="w"> </span><span class="kc">upper-alpha</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>This fails and the ":::" are showing in the HTML.</p>
-<p>::: {.upper-alpha} 1. Response 1 2. Response 2 3. Response 3 4. Response 4 :::</p>
-<p>This fails since the attributes are not added to the ol</p>
+<div class="highlight"><pre><span></span><code>::: {.upper-alpha} 1. Response 1 2. Response 2 3. Response 3 4. Response 4 :::
+</code></pre></div>
+<p>The trick of adding the property after the last element fails since the attributes are not added to the ol</p>
 <ol>
 <li>First item</li>
 <li>Second item</li>
 <li>Third item</li>
-<li class="upper-alpha">Fourth item</li>
+<li>Fourth item
+{:.upper-alpha}</li>
 </ol>
-<h2 id="lists-within-divs-fail">Lists Within Divs Fail</h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>First item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Second item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Third item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Fourth item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="err">&lt;</span>/ol class=&quot;upper-alpha&quot;&gt;
+</code></pre></div>
+<h2 id="markdown-lists-within-divs-also-fail">Markdown Lists Within Divs Also Fail</h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;upper-alpha&quot;</span><span class="p">&gt;</span>
+1. First item
+2. Second item
+3. Third item
+4. Fourth item
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 <div class="upper-alpha">
 1. First item
 2. Second item
@@ -412,7 +656,7 @@ letters to renumber a list.</p>
 <h2 id="pure-html-works">Pure HTML Works</h2>
 <div class="upper-alpha">
     <ol>
-        <li>First item bingbangbong</li>
+        <li>First item</li>
         <li>Second item</li>
         <li>Third item</li>
         <li>Fourth item</li>
@@ -421,7 +665,7 @@ letters to renumber a list.</p>
 
 <h2 id="this-works">This Works</h2>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ol</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;upper-alpha&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>First item bingbangbong<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>First item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Second item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Third item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Fourth item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -432,11 +676,49 @@ letters to renumber a list.</p>
 <span class="p">}</span>
 </code></pre></div>
 <ol class="upper-alpha">
-    <li>First item bingbangbong</li>
+    <li>First item</li>
     <li>Second item</li>
     <li>Third item</li>
     <li>Fourth item</li>
 </ol>
+
+<h2 id="attr_list-vs-markdownextensionsextra">attr_list vs. markdown.extensions.extra</h2>
+<p>We have tried both the <code>attr_list</code> as
+well as the <code>markdown.extensions.extra</code>
+configuration in our mkdocs.yml.  Neither
+of them seem to work.</p>
+<h2 id="custom-format">Custom Format</h2>
+<p>I have also tried different formats for the format</p>
+<p>Bang bang python/name format:</p>
+<p><div class="highlight"><pre><span></span><code>   format: !!python/name:pymdownx.superfences.fence_div_format
+</code></pre></div>
+vs. simple string format</p>
+<div class="highlight"><pre><span></span><code>   format: pymdownx.superfences.fence_div_format
+</code></pre></div>
+<h2 id="other-tests">Other Tests</h2>
+<div class="upper-alpha highlight"><pre><span></span><code><span class="k">1.</span> Response 1
+<span class="k">2.</span> Response 2
+<span class="k">3.</span> Response 3
+<span class="k">4.</span> Response 4
+</code></pre></div>
+<div class="upper-alpha highlight"><pre><span></span><code><span class="k">1.</span> Response 1
+<span class="k">2.</span> Response 2
+<span class="k">3.</span> Response 3
+<span class="k">4.</span> Response 4
+</code></pre></div>
+<div class="upper-alpha highlight"><pre><span></span><code><span class="k">1.</span> Response 1
+<span class="k">2.</span> Response 2
+<span class="k">3.</span> Response 3
+<span class="k">4.</span> Response 4
+</code></pre></div>
+<p>:::markdown {.upper-alpha}
+1. Response 1
+2. Response 2
+3. Response 3
+4. Response 4
+:::</p>
+<h2 id="references">References</h2>
+<p>This is suggested here: <a href="https://facelessuser.github.io/pymdown-extensions/extensions/superfences/">PyMarkdown Extensions Superfences</a></p>
 
 
 
