@@ -1,6 +1,7 @@
 site_name: Test Superfences
 nav:
   - Home: index.md
+  - MD in HTML: md-in-html.md
   - Superfences Tutorial: fences-tutorial.md
   - ChatGPT: chatgpt-suggestions.md
   - References: references.md
@@ -9,6 +10,7 @@ theme:
   name: material
 
 markdown_extensions:
+  - md_in_html
   # I use these to change the image size
   - attr_list
   # - markdown.extensions.extra
