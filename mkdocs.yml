@@ -9,7 +9,8 @@ theme:
   name: material
 
 markdown_extensions:
-  # - attr_list
+  # I use these to change the image size
+  - attr_list
   # - markdown.extensions.extra
   - pymdownx.superfences:
   # we have tried with and without the custom fences
