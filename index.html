@@ -243,6 +243,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#test-for-upper-alpha-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test for Upper Alpha Order
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists-within-divs-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lists Within Divs Fail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pure-html-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pure HTML Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      This Works
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -286,6 +322,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#test-for-upper-alpha-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test for Upper Alpha Order
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists-within-divs-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lists Within Divs Fail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pure-html-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pure HTML Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      This Works
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -311,12 +383,60 @@ letters to renumber a list.</p>
 <li>Response 3</li>
 <li>Response 4</li>
 </ol>
+<p>This works fine and has a green boarder showing the \&lt;ol&gt; is there.</p>
+<h2 id="test-for-upper-alpha-order">Test for Upper Alpha Order</h2>
 <p>::: {.upper-alpha}
 1. Response 1
 2. Response 2
 3. Response 3
 4. Response 4
 :::</p>
+<p>This fails and the ":::" are showing in the HTML.</p>
+<p>::: {.upper-alpha} 1. Response 1 2. Response 2 3. Response 3 4. Response 4 :::</p>
+<p>This fails since the attributes are not added to the ol</p>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+<li class="upper-alpha">Fourth item</li>
+</ol>
+<h2 id="lists-within-divs-fail">Lists Within Divs Fail</h2>
+<div class="upper-alpha">
+1. First item
+2. Second item
+3. Third item
+4. Fourth item
+{:.upper-alpha}
+</div>
+
+<h2 id="pure-html-works">Pure HTML Works</h2>
+<div class="upper-alpha">
+    <ol>
+        <li>First item bingbangbong</li>
+        <li>Second item</li>
+        <li>Third item</li>
+        <li>Fourth item</li>
+    </ol>
+</div>
+
+<h2 id="this-works">This Works</h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ol</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;upper-alpha&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>First item bingbangbong<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Second item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Third item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Fourth item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">ol</span><span class="p">.</span><span class="nc">upper-alpha</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">list-style-type</span><span class="p">:</span><span class="w"> </span><span class="kc">upper-alpha</span><span class="p">;</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+<ol class="upper-alpha">
+    <li>First item bingbangbong</li>
+    <li>Second item</li>
+    <li>Third item</li>
+    <li>Fourth item</li>
+</ol>
 
 
 
