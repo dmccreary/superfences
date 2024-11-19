@@ -1,9 +1,15 @@
 # Using the MD-in-HTML Markdown Extension
 
-Here is an elegent problem to the numbering problem.
+Here is an elegant problem to the multiple-choice numbering problem.
 
-There is a markdown extension called ```md_in_html```.
-When you turn on this extension, you can add
+By default, Markdown parser ignores any content within a raw HTML block-level element. So when you normally wrap a
+markdown list in a div for styling, the Markdown parser just
+skips over all the markdown within the div block.
+
+However, with the ```md-in-html``` extension enabled, the content of a raw HTML block-level element is always parsed as Markdown.
+You can turn this on by including a ```markdown``` attribute on the opening tag. The markdown attribute will be stripped from the output, while all other attributes will be preserved.
+
+After you enable the ```md-in-html``` extension, you can add
 Markdown text inside an HTML element like ```div``.
 You can then add a class to that div and modify
 the CSS to change the formatting just within that
