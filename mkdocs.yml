@@ -1,18 +1,20 @@
 site_name: Test Superfences
 nav:
   - Home: index.md
+  - ChatGPT: chatgpt-suggestions.md
 
 theme:
   name: material
 
 markdown_extensions:
-  - attr_list
+  # - attr_list
   # - markdown.extensions.extra
   - pymdownx.superfences:
-      custom_fences:
-        - name: div
-          class: ''
-          format: !!python/name:pymdownx.superfences.fence_div_format
+  # we have tried with and without the custom fences
+  #    custom_fences:
+  #      - name: div
+  #        class: ''
+  #        format: !!python/name:pymdownx.superfences.fence_div_format
 extra_css:
   - css/extra.css
 
