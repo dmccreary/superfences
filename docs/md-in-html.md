@@ -61,3 +61,7 @@ The result is perfect!
 3. Third item
 4. Fourth item
 </div>
+
+## References
+
+[Python Markdown Extensions md_in_html](https://python-markdown.github.io/extensions/md_in_html/)
