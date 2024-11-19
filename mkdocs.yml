@@ -1,0 +1,15 @@
+site_name: Test Superfences
+nav:
+  - Home: index.md
+
+theme:
+  name: material
+  markdown_extensions:
+  - attr_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: div
+          class: ''
+          format: pymdownx.superfences.fence_div_format
+extra_css:
+  - css/extra.css
