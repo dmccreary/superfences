@@ -108,7 +108,7 @@ SuperFences enhances Markdown's fenced code blocks with the following features:
 
 Below are various examples demonstrating how to utilize SuperFences in MkDocs Material to leverage its advanced features.
 
-### 1. Basic Fenced Code Blocks
+### Basic Fenced Code Blocks
 
 SuperFences supports standard fenced code blocks with enhanced syntax highlighting.
 
@@ -126,7 +126,7 @@ def greet():
     print("Hello, World!")
 ```
 
-### 2. Multi-Language Code Blocks
+### Multi-Language Code Blocks
 
 Combine different languages or preprocessors within a single code block using SuperFences.
 
@@ -162,7 +162,7 @@ Combine different languages or preprocessors within a single code block using Su
 </html>
 ```
 
-### 3. Adding Captions
+### Adding Captions
 
 Provide descriptive titles or captions to your code blocks for better context.
 
@@ -185,7 +185,7 @@ def greet():
 
 *Note: The actual rendering may vary based on your MkDocs Material theme settings.*
 
-### 4. Line Highlighting
+### Line Highlighting
 
 Highlight specific lines within your code block to emphasize important sections.
 
@@ -211,7 +211,7 @@ console.log(add(2, 3));
 
 *Lines 5 and 7 will be highlighted based on your theme's styling.*
 
-### 5. Embedding Diagrams
+### Embedding Diagrams
 
 Integrate diagrams directly within your Markdown using Mermaid.
 
