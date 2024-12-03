@@ -1,5 +1,5 @@
-site_name: Testing Mkdoc Material
-site_description: " "Used for testing mkdocs material configuration files"
+site_name: "Testing Mkdoc Material"
+site_description: "Used for testing mkdocs material configuration files"
 site_url: 'https://dmccreary.github.io/superfences/'
 repo_url: 'https://github.com/dmccreary/superfences'
 edit_uri: 'blob/master/docs'
