@@ -1,4 +1,7 @@
-site_name: Test Superfences
+site_name: Testing Mkdoc Material
+site_url: 'https://dmccreary.github.io/superfences/'
+repo_url: 'https://github.com/dmccreary/superfences'
+edit_uri: 'blob/master/docs'
 nav:
   - Home: index.md
   - MD in HTML: md-in-html.md
