@@ -1,8 +1,9 @@
 # Using the MD-in-HTML Markdown Extension
 
-Here is an elegant problem to the multiple-choice numbering problem.
+Here is an elegant solution to the multiple-choice numbering problem.
 
-By default, Markdown parser ignores any content within a raw HTML block-level element. So when you normally wrap a
+By default, Markdown parser ignores any content within a raw HTML 
+block-level element. So when you normally wrap a
 markdown list in a div for styling, the Markdown parser just
 skips over all the markdown within the div block.
 
